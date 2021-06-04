@@ -1,5 +1,5 @@
 import React from 'react';
-//import { Text, View } from 'react-native';
+import { Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -9,12 +9,18 @@ import Login from './views/Login';
 import Agentes from './views/Agentes';
 import Detentos from './views/Detentos';
 
+// Menu de Navegação Stack
+
 const Stack = createStackNavigator();
 
-function myHome(){
+function myHome({navigation}){
   return(
       <Stack.Navigator screenOptions={{headerStyle:{backgroundColor: '#111111',}, headerTintColor:'#eee'}}>
-        <Stack.Screen name = "Home" component={Home} />
+        <Stack.Screen name = "Home" component={Home} options={{ headerRight: () => (
+          <Button onPress={() => navigation.openDrawer()} title="Info" color="#fff"
+          />
+          ),
+        }} />
       </Stack.Navigator>
   );
 }
@@ -36,6 +42,7 @@ function myDetentos(){
 }
 
 
+// Menu de Navegação Drawer
 
 export default function App() {
  
@@ -44,7 +51,7 @@ export default function App() {
   return (
     <NavigationContainer>
 
-      <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Navigator initialRouteName="Home" >
         <Drawer.Screen name="Home" component={myHome} />
         <Drawer.Screen name="Load" component={Load} />
         <Drawer.Screen name="Login" component={Login} />

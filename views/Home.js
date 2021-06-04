@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Image} from 'react-native';
+import { View, StyleSheet, Image, Button} from 'react-native';
 
 export default function Home(){
     return(
@@ -7,7 +7,7 @@ export default function Home(){
            <Image 
             style={styles.image}
             source={require('../assets/img/logo500x500.png')}
-           />     
+           />
         </View>
     );
 }
