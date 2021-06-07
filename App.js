@@ -56,11 +56,7 @@ function myDetentos({navigation}){
           name = "Detentos" 
           component={Detentos}
           options={{
-            headerRight: () => (
-              <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.menubutton}>
-                <Image source={require('./assets/hamburguer-icon.png')} style={styles.iconstyle}/>
-              </TouchableOpacity>  
-            ),
+            
           }}
         />
     </Stack.Navigator>
@@ -76,7 +72,7 @@ export default function App() {
   return (
     <NavigationContainer>
 
-      <Drawer.Navigator initialRouteName="Home" >
+      <Drawer.Navigator initialRouteName="Login" >
         <Drawer.Screen name="Home" component={myHome} />
         <Drawer.Screen name="Load" component={Load} />
         <Drawer.Screen name="Login" component={Login} />
