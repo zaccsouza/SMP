@@ -77,9 +77,9 @@ export default function App() {
     <NavigationContainer>
 
       <Drawer.Navigator initialRouteName="Login" >
+        <Drawer.Screen name="Login" component={Login} options={{swipeEnabled: false}} />
         <Drawer.Screen name="Home" component={myHome} />
         <Drawer.Screen name="Load" component={Load} />
-        <Drawer.Screen name="Login" component={Login} />
         <Drawer.Screen name="Agente" component={myAgentes} />
         <Drawer.Screen name="Detentos" component={myDetentos} />
       </Drawer.Navigator>
